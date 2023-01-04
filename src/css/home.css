@@ -1,0 +1,78 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  max-height: 80%;
+  overflow: auto;
+}
+
+.date-divider:first-of-type {
+  margin-top: 0.5rem;
+}
+
+.date-divider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin: -0.5rem auto 0.5rem auto;
+  padding: 0.25rem 0;
+  color: gray;
+}
+
+.call {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  border: 1px solid black;
+  border-radius: 4px;
+  margin: 1rem auto;
+  width: 80%;
+}
+.call-missed {
+  border: 1px solid red;
+  color: red;
+}
+.call-no-details {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.call-details {
+  display: flex;
+  flex-direction: row;
+  margin: 0.5rem 1rem 1rem;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.call-archive {
+  border-radius: 5px;
+  background-color: rgb(97, 209, 52);
+  color: black;
+  padding: 7px 8px;
+  cursor: pointer;
+}
+
+.call-direction > svg,
+.call-expand > svg {
+  height: 1.5em;
+  width: 1.5em;
+  margin: 1rem;
+}
+.call-to-fro {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: auto;
+  width: 60%;
+}
+.call-to {
+  font-size: 1.5rem;
+}
+
+.call-time-duration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}

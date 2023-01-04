@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import ActivityFeed from "./Components/ActivityFeed.jsx";
+import Home from "./Components/Home.jsx";
 
 import Header from "./Header.jsx";
 
@@ -8,7 +8,7 @@ const App = () => {
   return (
     <div className="container">
       <Header />
-      <ActivityFeed />
+      <Home />
       <div className="container-view">Some activities should be here</div>
     </div>
   );
