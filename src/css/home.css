@@ -64,10 +64,10 @@
   flex-direction: column;
   position: relative;
   margin: auto;
-  width: 60%;
+  width: 40%;
 }
 .call-to {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 .call-time-duration {
@@ -75,4 +75,21 @@
   flex-direction: column;
   align-items: center;
   margin: auto;
+}
+
+.archive-all {
+  margin-top: 3.5rem;
+  font-size: 1.2rem;
+  background: whitesmoke;
+  padding: 8px 12px;
+  width: 50%;
+  text-align: center;
+  align-self: center;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-around;
+}
+.archive-all-hidden {
+  margin-top: 3.5rem;
 }

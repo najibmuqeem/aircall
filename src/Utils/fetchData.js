@@ -35,7 +35,7 @@ export const updateSingle = (id, is_archived) => {
       `https://charming-bat-singlet.cyclic.app/https://cerulean-marlin-wig.cyclic.app/activities/${id}`,
       {
         method: "PATCH",
-        body: JSON.stringify({ is_archived: true }),
+        body: JSON.stringify({ is_archived }),
         headers: {
           "Content-Type": "application/json",
         },
