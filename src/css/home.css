@@ -24,23 +24,22 @@
   font-weight: 800;
   margin: 0rem auto 0.5rem auto;
   padding: 0.25rem 0;
-  color: gray;
 }
 
 .call {
   display: flex;
   flex-direction: column;
   height: fit-content;
-  border: 1px solid gray;
-  border-radius: 4px;
+  border-radius: 5px;
   margin: 1rem auto;
   padding: 0.2rem;
   width: 80%;
   box-shadow: 0 3px 5px 3px rgb(203 219 223 / 60%);
+  background: white;
 }
 .call-missed {
-  border: 1px solid gray;
   color: #f92c85;
+  /* box-shadow: 0 3px 5px 3px rgb(249 44 133 / 60%); */
 }
 .call-no-details {
   display: flex;
@@ -58,11 +57,11 @@
 }
 .call-archive {
   border-radius: 5px;
-  background-color: rgb(97, 209, 52);
-  color: black;
+  background: #fdf5df;
   padding: 7px 8px;
   cursor: pointer;
   box-shadow: 0 3px 10px 3px rgb(203 219 223 / 60%);
+  color: #333333cf;
 }
 
 .call-direction > svg,
@@ -105,6 +104,7 @@
   justify-content: space-around;
   box-shadow: 0 3px 10px 3px rgb(203 219 223 / 60%);
 }
+
 .archive-all-hidden {
   margin-top: 3.5rem;
 }
@@ -112,7 +112,7 @@
 .modal {
   position: absolute;
   background: #fdf5df;
-  color: cadetblue;
+  text-align: center;
   top: 50%;
   width: 159px;
   font-size: 22px;

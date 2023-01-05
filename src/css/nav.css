@@ -7,7 +7,7 @@
   align-items: center;
   background: white;
   z-index: 1;
-  color: #5ebec4;
+  color: #333333cf;
 }
 
 .nav-item {
@@ -16,7 +16,7 @@
   font-size: 1.1rem;
   cursor: pointer;
   padding: 0.5rem;
-  border: 1px solid gray;
+  border: 1px solid #333333cf;
   border-radius: 4px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
