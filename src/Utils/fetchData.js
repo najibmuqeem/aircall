@@ -1,6 +1,6 @@
 //this version of Babel doesn't allow for async/await syntax
 export const fetchData = () => {
-  console.log(process.env.REACT_APP_BASE_URL);
+  console.log(process.env);
 
   try {
     return fetch(
