@@ -1,8 +1,9 @@
 .footer {
   display: flex;
   flex-direction: row;
-  position: absolute;
-  bottom: 15.2%;
+  position: fixed;
+  margin-top: 612px;
+  border-top: 2px solid gray;
 }
 
 .footer > div > svg {
