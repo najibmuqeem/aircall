@@ -5,6 +5,7 @@ import {
 } from "react-icons/bs";
 import { FaBan, FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { GrArchive } from "react-icons/gr";
+import { IoIosArchive } from "react-icons/io";
 import { sortCalls } from "../../Utils/callSort";
 import { updateSingle } from "../../Utils/fetchData";
 
@@ -114,7 +115,7 @@ const AllCalls = ({
                         call.call_type.slice(1)}
                     </div>
                   )}
-                  {!call.is_archived && (
+                  {!call.is_archived ? (
                     <div
                       className="call-archive"
                       onClick={(e) => {
@@ -156,6 +157,49 @@ const AllCalls = ({
                       }}
                     >
                       Archive <GrArchive />
+                    </div>
+                  ) : (
+                    <div
+                      className="call-archive"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        call.is_archived = false;
+                        if (selected === "Archived") {
+                          setDisplayedCalls((prev) =>
+                            prev.filter(
+                              (displayedCall) => displayedCall.id !== call.id
+                            )
+                          );
+                        } else {
+                          setDisplayedCalls((prev) =>
+                            sortCalls([
+                              ...prev.filter(
+                                (displayedCall) => displayedCall.id !== call.id
+                              ),
+                              call,
+                            ])
+                          );
+                        }
+                        setShowDetails([]);
+                        updateSingle(call.id, false).then((result) => {
+                          setFetchState(true);
+
+                          if (result.status !== 200) {
+                            setShowModal({
+                              display: true,
+                              message: "Unable to unarchive this call.",
+                            });
+                            setTimeout(() => {
+                              setShowModal({
+                                display: false,
+                                message: "Unable to unarchive this call.",
+                              });
+                            }, 3000);
+                          }
+                        });
+                      }}
+                    >
+                      Unarchive <GrArchive />
                     </div>
                   )}
                 </div>
