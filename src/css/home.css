@@ -39,7 +39,7 @@
   box-shadow: 0 3px 5px 3px rgb(203 219 223 / 60%);
 }
 .call-missed {
-  border: 1px solid red;
+  border: 1px solid gray;
   color: #f92c85;
 }
 .call-no-details {
