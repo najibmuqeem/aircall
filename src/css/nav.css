@@ -22,4 +22,5 @@
 }
 .nav-selected {
   border-bottom: none;
+  font-weight: 800;
 }

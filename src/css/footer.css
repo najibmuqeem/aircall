@@ -2,3 +2,18 @@
   display: flex;
   flex-direction: row;
 }
+
+.footer > div > svg {
+  width: 5em;
+  height: 2em;
+}
+
+.footer-item {
+  width: 100%;
+  padding: 15px 0 0 0;
+  cursor: pointer;
+}
+.footer-selected {
+  border-bottom: 5px solid darkgreen;
+  border-radius: 20px;
+}
