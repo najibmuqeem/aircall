@@ -16,10 +16,6 @@
   padding: 15px 0 0 0;
   cursor: pointer;
 }
-.footer-selected {
-  border-bottom: 5px solid darkgreen;
-  border-radius: 20px;
-}
 
 .footer-selected > svg {
   color: #5ebec4;
