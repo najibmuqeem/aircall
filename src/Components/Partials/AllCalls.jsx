@@ -15,6 +15,7 @@ const AllCalls = ({
   setFetchState,
   setDisplayedCalls,
   selected,
+  setShowModal,
 }) => {
   return (
     <div>
@@ -102,12 +103,17 @@ const AllCalls = ({
               </div>
               {showDetails.includes(index) && (
                 <div className="call-details">
-                  <div className="call-via">
-                    {call.via ? `via ${call.via}` : "N/A"}
-                  </div>
-                  <div className="call-type">
-                    {call.call_type[0].toUpperCase() + call.call_type.slice(1)}
-                  </div>
+                  {call.via && (
+                    <div className="call-via">
+                      {call.via ? `via ${call.via}` : "N/A"}
+                    </div>
+                  )}
+                  {call.call_type && (
+                    <div className="call-type">
+                      {call.call_type[0].toUpperCase() +
+                        call.call_type.slice(1)}
+                    </div>
+                  )}
                   {!call.is_archived && (
                     <div
                       className="call-archive"
@@ -131,9 +137,22 @@ const AllCalls = ({
                           );
                         }
                         setShowDetails([]);
-                        updateSingle(call.id, true).then(() =>
-                          setFetchState(true)
-                        );
+                        updateSingle(call.id, true).then((result) => {
+                          setFetchState(true);
+
+                          if (result.status !== 200) {
+                            setShowModal({
+                              display: true,
+                              message: "Unable to archive this call.",
+                            });
+                            setTimeout(() => {
+                              setShowModal({
+                                display: false,
+                                message: "Unable to archive this call.",
+                              });
+                            }, 3000);
+                          }
+                        });
                       }}
                     >
                       Archive <GrArchive />

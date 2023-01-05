@@ -11,6 +11,7 @@ import ActivityFeed from "./ActivityFeed";
 import Nav from "./Nav";
 import AllCalls from "./Partials/AllCalls";
 import { sortCalls } from "../Utils/callSort";
+import Footer from "./Footer";
 
 const Home = () => {
   const [showDetails, setShowDetails] = useState([]);
@@ -19,6 +20,7 @@ const Home = () => {
   const [fetchState, setFetchState] = useState(true);
   const [selected, setSelected] = useState("All");
   const [ascendingSort, setAscendingSort] = useState(false);
+  const [showModal, setShowModal] = useState({ display: false, message: "" });
 
   const displaySetter = (calls) => {
     if (selected === "All") {
@@ -54,42 +56,50 @@ const Home = () => {
   }, [fetchState, selected]);
 
   return (
-    <div className="home">
-      <Nav
-        selected={selected}
-        setSelected={setSelected}
-        setFetchState={setFetchState}
-      />
-      {selected !== "Archived" ? (
-        <div
-          className="archive-all"
-          onClick={() => {
-            if (selected === "Recent") {
-              setDisplayedCalls([]);
-            } else {
-              setDisplayedCalls((prev) =>
-                prev.map((prevCall) => ({ prevCall, is_archived: true }))
-              );
-            }
-            setShowDetails([]);
-            displayedCalls.forEach((call) => updateSingle(call.id, true));
-          }}
-        >
-          <GrArchive />
-          Archive all calls
-        </div>
-      ) : (
-        <div className="archive-all-hidden"></div>
-      )}
-      <AllCalls
-        displayedCalls={displayedCalls}
-        setDisplayedCalls={setDisplayedCalls}
-        selected={selected}
-        showDetails={showDetails}
-        setShowDetails={setShowDetails}
-        setFetchState={setFetchState}
-      />
-    </div>
+    <React.Fragment>
+      {showModal.display && <div className="modal">{showModal.message}</div>}
+      <div className="home">
+        <Nav
+          selected={selected}
+          setSelected={setSelected}
+          setFetchState={setFetchState}
+        />
+        {selected !== "Archived" ? (
+          <div
+            className="archive-all"
+            onClick={() => {
+              if (selected === "Recent") {
+                setDisplayedCalls([]);
+              } else {
+                setDisplayedCalls((prev) =>
+                  prev.map((prevCall) => {
+                    prevCall.is_archived = true;
+                    return prevCall;
+                  })
+                );
+              }
+              setShowDetails([]);
+              displayedCalls.forEach((call) => updateSingle(call.id, true));
+            }}
+          >
+            <GrArchive />
+            Archive all calls
+          </div>
+        ) : (
+          <div className="archive-all-hidden"></div>
+        )}
+        <AllCalls
+          displayedCalls={displayedCalls}
+          setDisplayedCalls={setDisplayedCalls}
+          selected={selected}
+          showDetails={showDetails}
+          setShowDetails={setShowDetails}
+          setFetchState={setFetchState}
+          setShowModal={setShowModal}
+        />
+      </div>
+      <Footer setShowModal={setShowModal} />
+    </React.Fragment>
   );
 };
 

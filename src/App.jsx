@@ -10,7 +10,6 @@ const App = () => {
     <div className="container">
       <Header />
       <Home />
-      <Footer />
     </div>
   );
 };

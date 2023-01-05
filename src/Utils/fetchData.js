@@ -40,7 +40,7 @@ export const updateSingle = (id, is_archived) => {
           "Content-Type": "application/json",
         },
       }
-    ).then((result) => console.log(result));
+    ).then((result) => result);
   } catch (err) {
     console.error(err);
   }
