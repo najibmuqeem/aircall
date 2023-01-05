@@ -13,16 +13,16 @@
 }
 
 .date-divider:first-of-type {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
 }
 
 .date-divider {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 800;
-  margin: -0.5rem auto 0.5rem auto;
+  margin: 0rem auto 0.5rem auto;
   padding: 0.25rem 0;
   color: gray;
 }
@@ -62,6 +62,7 @@
   color: black;
   padding: 7px 8px;
   cursor: pointer;
+  box-shadow: 0 3px 10px 3px rgb(203 219 223 / 60%);
 }
 
 .call-direction > svg,
