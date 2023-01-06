@@ -18,12 +18,12 @@
   padding: 0.5rem;
   border: 1px solid #333333cf;
   border-radius: 4px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
 }
 .nav-selected {
   border-bottom: none;
   font-weight: 800;
   background: #fdfdfc;
+  border-right: none;
+  border-left: none;
   /* box-shadow: 0px 3px 10px 3px rgb(203 219 223 / 60%); */
 }
